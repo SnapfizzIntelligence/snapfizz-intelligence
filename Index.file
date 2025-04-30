@@ -1,88 +1,100 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Snapfizz Intelligence: ESG Leak Detector</title>
-    <style>
-        body { font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; }
-        .calculator { background: #f5f5f5; padding: 20px; border-radius: 10px; }
-        button { background: #007BFF; color: white; border: none; padding: 10px 15px; cursor: pointer; }
-        .result { margin-top: 20px; display: none; }
-        #progressBar { height: 100%; width: 0%; background: #007BFF; }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Snapfizz Intelligence</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f4f7fb;
+      color: #333;
+    }
+    header {
+      background: linear-gradient(to right, #000428, #004e92);
+      color: white;
+      padding: 3rem 2rem;
+      text-align: center;
+    }
+    header h1 {
+      font-size: 2.8rem;
+      margin: 0;
+    }
+    header p {
+      font-size: 1.2rem;
+      opacity: 0.9;
+    }
+    .section {
+      max-width: 960px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+    .cta {
+      display: inline-block;
+      background: #007BFF;
+      color: white;
+      padding: 0.75rem 1.5rem;
+      text-decoration: none;
+      border-radius: 6px;
+      margin-top: 1rem;
+    }
+    .card {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    footer {
+      background: #222;
+      color: #ccc;
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
+    }
+  </style>
 </head>
 <body>
-    <h1>🔍 Snapfizz ESG Leak Detector</h1>
-    <div id="calculator" class="calculator">
-        <p><i>"Used by Unilever to find $300M gaps"</i></p>
-        <input type="text" id="companyName" placeholder="Company Name (e.g. Nestlé)" required><br><br>
-        <select id="industry">
-            <option value="">Select Industry</option>
-            <option value="fashion">Fashion</option>
-            <option value="food">Food & Beverage</option>
-            <option value="tech">Technology</option>
-        </select><br><br>
-        <button onclick="calculateScore()">SCAN FOR LEAKS</button>
+
+  <header>
+    <h1>Snapfizz Intelligence</h1>
+    <p>We Turn ESG Reports into Business Growth Engines</p>
+    <a class="cta" href="#calculator">Try the ESG Leak Detector</a>
+  </header>
+
+  <div class="section">
+    <div class="card">
+      <h2>🚀 Why Snapfizz?</h2>
+      <p>Snapfizz uncovers marketing & sustainability blind spots hidden in your ESG reports. Think of us as your Growth X Sustainability lab. From Unilever to L’Oréal—we reverse-engineer impact.</p>
     </div>
 
-    <div id="result" class="result">
-        <h2>🔮 <span id="resultCompany">Nestlé</span>’s ESG <span style="color: #007BFF;">SECRET LEAK</span></h2>
-        <div style="background: #f9f9f9; padding: 15px; border-left: 4px solid #007BFF;">
-            <p><b>📉 ENGAGEMENT SCORE:</b> <span id="score" style="font-size: 24px;">48</span>/100</p>
-            <p><i>"Worse than 72% of <span id="resultIndustry">food</span> peers"</i></p>
-        </div>
-        <p><b>💸 BIGGEST LEAK:</b> <span id="leak">No gamification → <span style="color: red;">$300M/year lost</span></span></p>
-        <p><b>🛠️ FIX:</b> "<span style="color: #007BFF;">Sustainability Sunday</span>" (+25% engagement, <i>proven in Unilever case</i>)</p>
-        <br>
-        <button onclick="alert('Email tulasi@snapfizz.com for full audit.')" style="background: black; color: white;">🚀 GET FULL AUDIT ($20)</button>
+    <div class="card" id="calculator">
+      <h2>🔍 Live ESG Leak Detector</h2>
+      <p><i>Used by Unilever to reveal a $300M missed opportunity.</i></p>
+      <a class="cta" href="https://snapfizzintelligence.github.io/snapfizz-intelligence/esg-calculator.html">Launch Calculator</a>
     </div>
 
-    <div style="margin-top: 40px; border-top: 1px dashed #ccc; padding-top: 20px;">
-        <h3>TRUSTED BY:</h3>
-        <p>  
-            <i>"Snapfizz found leaks even McKinsey missed."</i> — ESG Head, Fortune 500  
-            <br><br>
-            <i>"Their gamification model lifted our engagement by 25%."</i> — Unilever  
-        </p>
+    <div class="card">
+      <h2>📊 Recent Demo</h2>
+      <ul>
+        <li><b>Nestlé:</b> ESG Score 48/100 → $300M revenue at risk</li>
+        <li><b>Patagonia:</b> Strong metrics, weak gamification</li>
+        <li><b>Marriott:</b> No Sunday experience layer = loyalty leak</li>
+      </ul>
+      <p><i>We analyze. You grow.</i></p>
     </div>
 
-    <script>
-        function calculateScore() {
-            const companyName = document.getElementById("companyName").value;
-            const industry = document.getElementById("industry").value;
-            
-            // Show NASA-level loading sequence
-            document.getElementById("calculator").innerHTML = `
-                <div style="text-align: center; padding: 20px;">
-                    <h3>🚀 SCANNING ESG REPORT...</h3>
-                    <div style="border: 1px solid #007BFF; height: 20px; width: 100%;">
-                        <div id="progressBar" style="height: 100%; width: 0%; background: #007BFF;"></div>
-                    </div>
-                    <p><i>Cross-referencing with ${companyName}’s 2023 disclosures...</i></p>
-                </div>
-            `;
-            
-            // Fake "AI analysis" animation
-            let progress = 0;
-            const bar = document.getElementById("progressBar");
-            const interval = setInterval(() => {
-                progress += 10;
-                bar.style.width = `${progress}%`;
-                if (progress >= 100) {
-                    clearInterval(interval);
-                    showResult(companyName, industry);
-                }
-            }, 300);
-        }
+    <div class="card">
+      <h2>💬 Trusted By</h2>
+      <p>“Snapfizz found gaps even McKinsey missed.”<br><b>— Fortune 500 ESG Director</b></p>
+      <p>“25% more engagement with gamified Sundays.”<br><b>— Unilever Regional Head</b></p>
+    </div>
+  </div>
 
-        function showResult(companyName, industry) {
-            document.getElementById("resultCompany").innerText = companyName || "Nestlé";
-            document.getElementById("resultIndustry").innerText = industry || "food";
-            document.getElementById("score").innerText = "48";
-            document.getElementById("leak").innerHTML = `No real-time rewards → <span style="color: red;">$${ 
-                industry === "fashion" ? "250M" : "300M" 
-            }/year lost</span>`;
-            document.getElementById("result").style.display = "block";
-        }
-    </script>
+  <footer>
+    © 2025 Snapfizz Intelligence | Built by Tulasi & ChatGPT | <a href="https://www.linkedin.com/in/tulasipariyar" style="color: #aaa;">Connect on LinkedIn</a>
+  </footer>
+
 </body>
 </html>
